@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Copy Buttons</title>
+</head>
+<body>
+  <h1>Click the Button to Copy Python Code</h1>
+  
+  <!-- Copy Button for Your Code -->
+  <button onclick="copyToClipboard(`print('Practical 1(A) performed by Prerana Jadhav')\n\nx = int(input('Enter the value of x '))\nb = int(input('Enter the value for bias '))\nw = int(input('Enter the value for weight '))\n\nynet = w * x + b\n\nprint('Net Input =', ynet)\n\nprint('Apply Activation Function over net input, Ramp Function')\n\nif ynet < 0:\n    output = 0\nelif ynet >= 0 and ynet <= 1:\n    output = ynet\nelse:\n    output = 1\n\nprint('Output =', output)`);">
+    Copy SLNN Code
+  </button>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Code copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
